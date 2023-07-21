@@ -24,7 +24,13 @@
             width:50px; margin:0 10px; 
             display:flex; align-items:flex-end;
         }
-        #v_btn a img {width:100%;}
+        #v_btn a img {
+            width:100%;
+            transition: all 1s;
+        }
+        #v_btn a:hover img {
+            transform: translateY(-50px);
+        }
     </style>
     <script>
         window.onload=function(){
