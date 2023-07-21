@@ -6,8 +6,96 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>애니메이션1</title>
+    <style>
+        #btn1 {
+            background: rgb(255, 200, 234);
+            width: 100px;
+            height: 100px;
+            text-align: right;
+            position: relative;
+            left: 0;
+            border-radius: 10px;
+            /* position: relative; */
+            /* 지속시간이 각 속성마다 다를 경우 */
+            /* transition:background 0.5s,width 0.8s; */
+            /* 지속시간이 모든 속성에 일치할 때 */
+            transition: all 1s;
+        }
+        #btn1:hover {
+            background: rgb(255, 137, 225);
+            width: 200px;
+            text-align: center;
+            height: 200px;
+            left: 100px;
+            border-radius: 100px;
+            /* transition:애니메이션적용속성 지속시간; */
+        }
+        #btn2 {
+            width: 100px;
+            height: 100px;
+            transition: width 1s  linear 0.5s,
+                        height 2s ease 2.5s;
+        }
+        #btn2:hover {
+            width: 200px;
+            height: 50px;
+        }
+        /* transform 연습 */
+        #btn3 {
+            padding: 10px;
+        }
+        /* btn3에 마우스를 올렸을 때 그 형제 box가 변경된다. */
+        #btn3:hover  ~.box{
+            background: rgb(154, 255, 255);
+            /* transform:속성(값) 속성(값) */
+            /* transform 속성은 자식, 자손에게도 영향을 준다. */
+            /* transform: scaleX(1.5) scaleY(3); *//* 1=100% */
+            /* transform: rotate(-60deg) scaleX(1.5); */
+            /* transform: skewY(20deg); */
+            transform: translateY(200px);
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background: lightgoldenrodyellow;
+            transition: transform 0.5s;
+        }
+        #btn4 {
+            padding: 10px;
+        }
+        .target {
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: tan;
+            transition: transform 0.5s;
+        }
+        #btn4:hover ~.target{
+            background: rgb(255, 213, 213);
+            transform-origin: center bottom;
+            transform: rotate(40deg);
+        }
+    </style>
 </head>
 <body>
-    
+    <ul>
+        <li>
+            <button id="btn1">메롱</button>
+        </li>
+        <li>
+            <button type="button" id="btn2">animation2</button>
+        </li>
+        <li>
+            <button id="btn3" type="button">transfomf1</button>
+            <hr>
+            <div class="box">box</div>
+        </li>
+        <li>
+            <button id="btn4" type="button">transfomf2</button>
+            <hr>
+            <span class="target">적용대상</span>
+        </li>
+        <li></li>
+    </ul>
 </body>
 </html>
