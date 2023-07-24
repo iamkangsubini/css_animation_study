@@ -18,7 +18,7 @@
             background: lightpink;
         }
         main span {
-            background: lightgoldenrodyellow;
+            background: rgb(224, 224, 163);
             padding: 10px;
             width: 100px;
             height: 100px;
@@ -29,15 +29,42 @@
         }
         /* 2. 오른쪽으로 이동 */
         main .target2 {
-            animation: right500 0.5s ease-in 3 alternate-reverse;
+            animation: right500 1s linear 3 alternate both;
         }
-        main .target3 {}
-        main .target4 {}
+        /* 3. 위로 갔다 아래로 가기 > 산모양 */
+        main .target3 {
+            animation: left_top_right 1s;
+        }
+        /* 내가 지정해보기 */
+        main .target4 {
+            animation: opacity 2s;
+        }
         main .target5 {}
         /* animation + @keyframes */
         @keyframes right500 {
             0% {transform: translateX(0);}
             100% {transform: translateX(500px);}
+        }
+        @keyframes left_top_right {
+            0% {transform: translate(0,0);}
+            50% {transform: translate(250px, -300px);}
+            100% {transform: translate(500px, 0);}
+        } 
+        @keyframes rotation {
+            0% {
+                font-size: 2rem;
+                transform: rotate(-60deg)
+            }
+            100% {
+                font-size: 5rem;
+                font-weight: 700;
+                background: rgb(117, 212, 117);
+                transform: rotate(-180deg;)
+            }
+        }
+        @keyframes opacity {
+            0% {opacity: 0;}
+            100% {opacity:3;}
         }
         /* @keyframes 작성위치 style맨아래 또는 외부스타일분리 > 보통 외부스타일로 많이함. */
         /* 1. 원하는 애니메이션 시작-끝 장면 정하기 */
