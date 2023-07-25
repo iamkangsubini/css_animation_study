@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>gradient-animation-1</title>
+    <style>
+        #btn1 {
+            width: 100px;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            background: linear-gradient(90deg, rgb(214, 214, 214), pink, gray);
+            background-size: 400%;
+            cursor: pointer;
+            transition: all 1s;
+        }
+        #btn1:hover {
+            background-position: 100% 0;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1" type="button">click here!</button>
+</body>
+</html>
